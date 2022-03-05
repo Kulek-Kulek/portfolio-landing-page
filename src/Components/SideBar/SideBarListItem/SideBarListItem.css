@@ -1,0 +1,19 @@
+.header__list-item {
+    width: 100%;
+}
+
+.header__list-item-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header__list-item-icon {
+    font-size: 25px;
+    color: var(--main-color);
+}
+
+.header__list-item-desc {
+    margin-left: 2rem;
+    color: var(--main-color);
+}

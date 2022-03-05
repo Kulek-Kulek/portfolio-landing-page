@@ -1,0 +1,27 @@
+.header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: .25rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 3px 7px 1px rgba(0, 0, 0, .3);
+    margin-bottom: var(--header-margin-bottom);
+}
+
+.header__bar-wrapper {
+    cursor: pointer;
+}
+
+.header__logo {
+    flex-basis: 7%;
+    height: 90%;
+}
+
+.header__bars {
+    color: var(--main-color);
+    font-size: 40px;
+}
