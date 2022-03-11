@@ -1,4 +1,4 @@
-import logoImg from '../../Assets/Images/logo-name.png';
+import logoImg from '../../Assets/Images/youtube_profile_image.png';
 
 import './Logo.css';
 

@@ -3,6 +3,8 @@
     --accent-color: rgb(204, 0, 0);
     --header-height: 50px;
     --header-margin-bottom: 1rem;
+    --sidebar-animation-duration: 150ms;
+    --sidebar-animation-timing-curve: ease-in-out;
 }
 
 body {

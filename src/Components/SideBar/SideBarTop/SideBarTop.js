@@ -8,8 +8,8 @@ const SideBarTop = props => {
             <div className="sidebar__logo-wrapper">
                 <Logo />
             </div>
-            <h3 className='sidebar__hidden'>Your channel</h3>
-            <h4 className='sidebar__hidden'>OkayProjects</h4>
+            <h3 className='sidebar__logo-slogan'>Your channel</h3>
+            <h4 className='sidebar__logo-slogan'>OkayProjects</h4>
         </div>
     );
 }

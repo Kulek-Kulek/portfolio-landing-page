@@ -1,19 +1,34 @@
 .sidebar__top {
+    flex-basis: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: flex-basis var(--sidebar-animation-duration) var(--sidebar-animation-timing-curve);
+}
+
+.sidebar.open .sidebar__top {
+    flex-basis: 20%;
+
 }
 
 .sidebar__logo-wrapper {
     width: 50px;
     height: 50px;
+    transition: var(--sidebar-animation-duration) var(--sidebar-animation-timing-curve);
 }
 
-.sidebar__hidden {
+.sidebar.open .sidebar__logo-wrapper {
+    width: 150px;
+    height: 150px;
+}
+
+.sidebar__logo-slogan {
     display: none;
+    width: 100%;
+    text-align: center;
 }
 
-.sidebar.open .sidebar__hidden {
+.sidebar.open .sidebar__logo-slogan {
     display: block;
 }
