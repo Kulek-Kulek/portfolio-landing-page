@@ -8,7 +8,6 @@ const SideBarBottom = props => {
             path={item.path}
             desc={item.desc}
             icon={item.icon}
-            active={item.active}
         />
     ));
 

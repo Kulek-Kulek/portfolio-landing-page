@@ -1,32 +1,34 @@
 import SideBarTop from '../SideBarTop/SideBarTop';
 import SideBarContent from '../SideBarContent/SideBarContent';
 import SideBarBottom from '../SideBarBottom/SideBarBottom';
+import { v4 as uuidv4 } from 'uuid';
 
-import { faBagShopping, faHome } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faShapes, faNetworkWired, faHandshake } from "@fortawesome/free-solid-svg-icons";
+
 
 import './SideBarMainComponent.css';
 
 const menu = [
     {
-        path: '#',
+        id: uuidv4(),
+        path: '/home',
         icon: faHome,
-        desc: 'faHome',
-        active: true,
+        desc: "Let's meet",
     },
     {
-        path: '#',
-        icon: faBell,
-        desc: 'faBell'
+        id: uuidv4(),
+        path: '/projects',
+        icon: faNetworkWired,
+        desc: "Let's have a look"
     },
     {
-        path: '#',
-        icon: faBookmark,
-        desc: 'faBookmark'
+        id: uuidv4(),
+        path: '/mobile',
+        icon: faShapes,
+        desc: "Let's something"
     },
     // {
-    //     path: '#',
+    //     path: '/mobile',
     //     icon: faBagShopping,
     //     desc: 'faBatteryHalf'
     // },
@@ -36,9 +38,10 @@ const menu = [
     //     desc: 'faBookmark'
     // },
     {
-        path: '#',
-        icon: faBagShopping,
-        desc: 'faBatteryHalf',
+        id: uuidv4(),
+        path: '/mmm',
+        icon: faHandshake,
+        desc: "Let's do it",
         bottom: true
     }
 ];

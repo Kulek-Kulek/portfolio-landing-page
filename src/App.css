@@ -1,5 +1,5 @@
 :root {
-    --main-color: gray;
+    --main-color: black;
     --accent-color: rgb(204, 0, 0);
     --header-height: 50px;
     --header-margin-bottom: 1rem;
@@ -17,9 +17,7 @@ body {
     box-sizing: border-box;
 }
 
-section {
-    height: 100vh;
-}
+
 
 /* section:nth-child(1) {
     background: blue;

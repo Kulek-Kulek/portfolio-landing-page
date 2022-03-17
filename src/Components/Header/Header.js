@@ -2,7 +2,7 @@ import Logo from '../../SharedElements/Logo/Logo';
 
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logoSrc from '../../Assets/Images/logo-img.png';
+import logoSrc from '../../Assets/Images/logo.png';
 
 import './Header.css';
 

@@ -1,5 +1,8 @@
-import Home from './Pages/Home/Home';
-import SimpleProjects from './Pages/SampleProjects/SampleProjects';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import Layout from './Components/Layout/Layout';
+import HomePage from './Pages/HomePage/HomePage';
+import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
 import Sample from './Pages/Smples/Sample';
 
 import './App.css';
@@ -7,9 +10,14 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Home />
-      <SimpleProjects />
-      <Sample />
+      <Layout>
+        <Routes>
+          <Route path='/' element={<Navigate replace to='/home' />} />
+          <Route path='/home' element={<HomePage />} />
+          <Route path='/projects' element={<ProjectsPage />} />
+          <Route path='/mobile' element={<Sample />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }
