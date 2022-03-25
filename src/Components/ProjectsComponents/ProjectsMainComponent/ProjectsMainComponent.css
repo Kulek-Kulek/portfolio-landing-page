@@ -1,3 +1,7 @@
+.projects {
+    height: auto;
+}
+
 .projects__list {
     display: flex;
     flex-wrap: wrap;

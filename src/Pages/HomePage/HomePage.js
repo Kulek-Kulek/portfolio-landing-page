@@ -1,10 +1,10 @@
-import HomeMainComponent from "../../Components/HomeComponents/HomeMainComponent/HomeMainComponent";
+import MainHomeComponent from "../../Components/HomeComponents/MainHomeComponent/MainHomeComponent";
 
 
 const HomePage = props => {
     return (
         <>
-            <HomeMainComponent />
+            <MainHomeComponent />
         </>
     );
 }

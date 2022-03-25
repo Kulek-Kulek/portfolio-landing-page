@@ -1,6 +1,6 @@
 :root {
-    --main-color: black;
-    --accent-color: rgb(204, 0, 0);
+    --main-color: #151515;
+    --accent-color: #45f3ff;
     --header-height: 50px;
     --header-margin-bottom: 1rem;
     --sidebar-animation-duration: 150ms;
@@ -15,23 +15,4 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-
-/* section:nth-child(1) {
-    background: blue;
-} */
-
-section:nth-child(2) {
-    background: orange;
-}
-
-section:nth-child(3) {
-    background: olivedrab;
-}
-
-.ddd {
-    font-size: 100px;
-    color: brown;
 }
