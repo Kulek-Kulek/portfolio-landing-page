@@ -1,7 +1,7 @@
 .welcome__section {
     position: relative;
     width: 100%;
-    background: #000;
+    background: var(--bg-color);
     overflow: hidden;
 }
 

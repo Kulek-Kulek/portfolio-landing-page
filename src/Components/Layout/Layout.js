@@ -3,6 +3,9 @@ import SideBarMainComponent from "../SideBar/SideBarMainComonent/SideBarMainComp
 import Main from "../../SharedElements/Main/Main";
 import FlexContent from "../../SharedElements/FlexContent/FlexContent";
 import Header from "../Header/Header";
+import FooterMainComponent from "../Footer/FooterMainComponent/FooterMainComponent";
+
+import './Layout.css';
 
 const Layout = props => {
     return (
@@ -10,7 +13,13 @@ const Layout = props => {
             <Header />
             <FlexContent>
                 <SideBarMainComponent />
-                <Main>{props.children}</Main>
+                <div className="app-wrapper">
+                    <Main>
+                        {props.children}
+
+                    </Main>
+                    <FooterMainComponent />
+                </div>
             </FlexContent>
         </Fragment>
     );

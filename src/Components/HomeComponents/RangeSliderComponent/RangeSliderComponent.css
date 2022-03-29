@@ -18,13 +18,13 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: rgb(43, 40, 40);
+    background: rgb(54, 52, 52);
     padding: 10% 5%;
 }
 
 .range-slider__p {
     font-size: 14px;
-    color: #000;
+    color: var(--bg-color);
     text-align: center;
     margin-bottom: 10%;
     z-index: 3;
@@ -53,7 +53,7 @@
     display: block;
     font-size: 3em;
     font-weight: 800;
-    color: #000;
+    color: var(--bg-color);
     text-shadow: 1px 1px 1px #fff;
     z-index: 2;
     text-align: center;
@@ -62,7 +62,7 @@
 
 .range-slider__range-value--front {
     color: #fff;
-    text-shadow: 5px 5px 1px #000;
+    text-shadow: 5px 5px 1px var(--bg-color);
     transition: .5s;
 }
 
@@ -74,8 +74,8 @@
 
 .range-slider__fill-range-value {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    /* align-items: center; */
     position: absolute;
     top: 0;
     left: 0;
@@ -94,7 +94,7 @@
     border-color: #fff;
     border-radius: 15px;
     padding: 0 2px;
-    box-shadow: 5px 1px 10px #000;
+    box-shadow: 5px 1px 10px var(--bg-color);
     z-index: 2;
     overflow: hidden;
     -webkit-appearance: none;
@@ -110,7 +110,6 @@
     background: var(--accent-color);
     border: 4px solid #222;
     z-index: 2;
-    /* box-shadow: -407px 0 0 #00adff; */
 }
 
 
@@ -125,7 +124,7 @@
     }
 
     .range-slider__p {
-        font-size: 14px;
+        font-size: 12px;
         transform: translateY(20px);
     }
 

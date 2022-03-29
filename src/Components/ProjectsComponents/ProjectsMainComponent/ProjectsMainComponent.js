@@ -1,5 +1,6 @@
 import Section from "../../../SharedElements/Section/Section";
 import ProjectItem from "../ProjectItem/ProjectItem";
+import NavItem from "../NavItem/NavItem";
 import { v4 as uuidv4 } from 'uuid';
 import projectImageFront from '../../../Assets/Images/front.jfif';
 import projectImageBack from '../../../Assets/Images/back.jfif';
@@ -10,7 +11,7 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['vanillajs'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -18,7 +19,8 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['react.js', 'angular.js', 'node.js'],
+        icon: ['react', 'angular', 'node'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -26,7 +28,8 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['redux.js', 'mongodb'],
+        icon: ['redux', 'mongo'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -34,7 +37,8 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['typescript.js'],
+        icon: ['typescript'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -42,7 +46,8 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['vanillajs'],
+        icon: ['javascript'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -50,7 +55,8 @@ const PROJECTS_LIST = [
         id: uuidv4(),
         name: 'project 1',
         desc: 'fffffffffffffff',
-        stack: ['vanillajs', 'oop', 'games'],
+        stack: ['vanillajs'],
+        icon: ['javascript'],
         imgFront: { src: projectImageFront, alt: 'project-photo-front' },
         imgBack: { src: projectImageBack, alt: 'project-photo-back' }
     },
@@ -72,10 +78,31 @@ const ProjectsMainComponent = props => {
         />
     ));
 
+    let uniqueStack = [];
+
+    for (let arr of PROJECTS_LIST) {
+        for (let stack of arr.stack) {
+            if (!uniqueStack.includes(stack)) {
+                uniqueStack.push(stack)
+            }
+        }
+    }
+
+    const navlinks = uniqueStack.map(item => (
+        <NavItem
+            key={uuidv4()}
+            name={item}
+        />
+    ));
 
 
     return (
         <Section class='projects'>
+            <nav className='projects__nav'>
+                <ul className='projects__nav-list'>
+                    {navlinks}
+                </ul>
+            </nav>
             <ul className="projects__list">
                 {projects}
             </ul>

@@ -5,7 +5,7 @@ import Carousel3D from "../3DCarousel/3DCarousel";
 
 import './RangeSliderComponent.css';
 
-const SPRITE_SVG = ['react', 'node', 'angular', 'Typescript', 'javascript', 'mongodb', 'css', 'sass'];
+const SPRITE_SVG = ['react', 'node', 'angular', 'typescript', 'javascript', 'mongodb', 'redux', 'sass'];
 
 const RangeSliderComponent = props => {
 

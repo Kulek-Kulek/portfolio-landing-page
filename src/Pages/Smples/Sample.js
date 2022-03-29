@@ -1,5 +1,9 @@
+import MainMobileComponent from "../../Components/MobileComonents/MainMobileComponent/MainMobileComponent";
+
 const Sample = props => {
-    return (<section>SAMPLES</section>);
+    return (
+        <MainMobileComponent />
+    );
 }
 
 export default Sample;

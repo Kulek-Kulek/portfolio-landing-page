@@ -10,10 +10,11 @@ import node from '../../../../Assets/Images/svg/node.svg';
 import nodelogo from '../../../../Assets/Images/svg/nodelogo.svg';
 import sass from '../../../../Assets/Images/svg/sass.svg';
 import github from '../../../../Assets/Images/svg/github.svg';
+import redux from '../../../../Assets/Images/svg/redux.svg';
 
 
 
-const STACK = [react, angular, css, bootstrap, javascript, typescript, node, mongodblogo, html, nodelogo, sass, github];
+const STACK = [react, angular, css, bootstrap, javascript, typescript, node, mongodblogo, html, nodelogo, sass, github, redux];
 
 export const createStackImage = () => {
 

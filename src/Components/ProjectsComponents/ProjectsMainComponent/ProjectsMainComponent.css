@@ -1,5 +1,31 @@
+.projects__nav {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.projects__nav-list {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+
 .projects {
     height: auto;
+    position: relative;
+}
+
+.projects__nav {
+    height: 30vh;
+    box-shadow: 1px 1px 10px black;
 }
 
 .projects__list {

@@ -1,0 +1,86 @@
+.cylinder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(243, 239, 239);
+    height: 50vh;
+    overflow: hidden;
+}
+
+.cylinder__wrapper {
+    transform-style: preserve-3d;
+    -webkit-animation: rotateCylinder 25s linear infinite;
+    animation: rotateCylinder 55s linear infinite;
+
+}
+
+.cylinder__slogan {
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 0 10px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, .5), transparent);
+    line-height: .76em;
+    transform-style: preserve-3d;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(80px);
+}
+
+.cylinder__slogan i:nth-child(1) {
+    font-style: initial;
+    color: #f817a2;
+    text-shadow: 3px 3px 2px var(--main-color);
+    ;
+}
+
+.cylinder__slogan i:nth-child(2) {
+    font-style: initial;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 5px black;
+}
+
+
+@-webkit-keyframes rotateCylinder {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotate(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotate(0deg);
+    }
+}
+
+
+@keyframes rotateCylinder {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotate(25deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotate(25deg);
+    }
+}
+
+
+
+@media (orientation:landscape) {
+    .cylinder {
+        height: 100vh;
+    }
+
+    .cylinder__slogan {
+        font-size: 3em;
+        transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(100px);
+    }
+}
+
+@media (min-width:1024px) {
+    .cylinder__slogan {
+        font-size: 6em;
+        line-height: .76em;
+        transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(200px);
+    }
+}

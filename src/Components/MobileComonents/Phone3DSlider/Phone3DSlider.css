@@ -1,0 +1,55 @@
+.phone3DSlider {
+    position: relative;
+    width: 40%;
+    height: 70%;
+    background: rgba(0, 0, 0, .1);
+    transform: rotate(-20deg) skew(25deg) scale(.8);
+    margin-top: 75%;
+    transition: .5s;
+}
+
+.phone3DSlider__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+
+.phone3DSlider:hover .phone3DSlider__img:nth-child(4) {
+    transform: translate(160px, -160px);
+    opacity: 1;
+}
+
+.phone3DSlider:hover .phone3DSlider__img:nth-child(3) {
+    transform: translate(120px, -120px);
+    opacity: .8;
+}
+
+.phone3DSlider:hover .phone3DSlider__img:nth-child(2) {
+    transform: translate(80px, -80px);
+    opacity: .6;
+}
+
+.phone3DSlider:hover .phone3DSlider__img:nth-child(1) {
+    transform: translate(40px, -40px);
+    opacity: .4;
+}
+
+@media (orientation:landscape) {
+    .phone3DSlider {
+        position: relative;
+        width: 30%;
+        height: 85%;
+        background: rgba(0, 0, 0, .1);
+        transform: rotate(-30deg) skew(25deg) scale(.8);
+        margin-top: 60%;
+        transition: .5s;
+    }
+}
+
+@media (min-width:1024px) {
+    .phone3DSlider {
+        margin-top: 15%;
+    }
+}

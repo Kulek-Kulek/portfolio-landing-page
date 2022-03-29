@@ -1,5 +1,6 @@
 :root {
-    --main-color: #151515;
+    --main-color: #292828;
+    --bg-color: rgb(29, 27, 27);
     --accent-color: #45f3ff;
     --header-height: 50px;
     --header-margin-bottom: 1rem;
