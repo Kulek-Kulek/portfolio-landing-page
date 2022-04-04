@@ -4,7 +4,7 @@ import './Section.css'
 
 const Section = props => {
     return (
-        <section className={`section ${props.class ? props.class : ''}`}>{props.children}</section>
+        <section className={`section ${props.class ? props.class : ''}`} id={props.id}>{props.children}</section>
     );
 }
 

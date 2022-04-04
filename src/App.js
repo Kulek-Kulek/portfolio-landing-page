@@ -4,6 +4,7 @@ import Layout from './Components/Layout/Layout';
 import HomePage from './Pages/HomePage/HomePage';
 import ProjectsPage from './Pages/ProjectsPage/ProjectsPage';
 import Sample from './Pages/Smples/Sample';
+import ContactForm from './Components/ContactForm/ContactForm';
 
 import './App.css';
 
@@ -17,7 +18,9 @@ function App() {
           <Route path='/projects' element={<ProjectsPage />} />
           <Route path='/mobile' element={<Sample />} />
         </Routes>
+        <ContactForm />
       </Layout>
+
     </div>
   );
 }

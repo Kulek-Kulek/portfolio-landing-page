@@ -3,8 +3,6 @@ import RangeSliderComponent from "../RangeSliderComponent/RangeSliderComponent";
 import ParallaxTextComponent from "../ParallaxTextComponent/ParallaxTextComponent";
 import Cylinder from "../CylinderComponent/Cylinder/Cylinder";
 
-
-
 const MainHomeComponent = props => {
     return (
         <>

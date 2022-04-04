@@ -27,16 +27,6 @@ const menu = [
         icon: faShapes,
         desc: "Let's something"
     },
-    // {
-    //     path: '/mobile',
-    //     icon: faBagShopping,
-    //     desc: 'faBatteryHalf'
-    // },
-    // {
-    //     path: '#',
-    //     icon: faBookmark,
-    //     desc: 'faBookmark'
-    // },
     {
         id: uuidv4(),
         path: '/mmm',

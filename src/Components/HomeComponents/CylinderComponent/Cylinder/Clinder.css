@@ -1,9 +1,10 @@
 .cylinder {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(243, 239, 239);
-    height: 50vh;
+    background: #000;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -11,7 +12,6 @@
     transform-style: preserve-3d;
     -webkit-animation: rotateCylinder 25s linear infinite;
     animation: rotateCylinder 55s linear infinite;
-
 }
 
 .cylinder__slogan {

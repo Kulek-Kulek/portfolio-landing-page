@@ -13,6 +13,7 @@
     background: var(--main-color);
     overflow: hidden;
     transition: flex-basis var(--sidebar-animation-duration) var(--sidebar-animation-timing-curve);
+    z-index: 100;
 }
 
 .sidebar.open {

@@ -1,0 +1,47 @@
+.button {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    border: none;
+    /* padding: 0 2%; */
+    background-color: #fff;
+    transition: 1s;
+}
+
+.button:hover {
+    cursor: pointer;
+    font-weight: bold;
+    transition: 1s;
+}
+
+.button__svg, .button__rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+}
+
+.button__rect {
+    stroke: #00e2ff;
+    stroke-width: 10;
+    stroke-dasharray: 60 200;
+    stroke-dashoffset: 320;
+    transition: 2s;
+}
+
+.button:hover .button__rect {
+    stroke: #F817A2;
+    stroke-dasharray: 200 60;
+    stroke-dashoffset: 0;
+
+}

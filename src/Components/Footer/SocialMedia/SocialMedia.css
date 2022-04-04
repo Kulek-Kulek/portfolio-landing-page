@@ -1,0 +1,50 @@
+.footer__socialmedia-item {
+    position: relative;
+    list-style: none;
+    padding: 3% 5%;
+    margin: 0 7%;
+    /* background-color: #fff; */
+}
+
+
+.footer__socialmedia-link {
+    text-decoration: none;
+}
+
+.footer__socialmedia-icon {
+    color: #333;
+    font-size: 10em;
+    transition: .4s ease-in-out;
+}
+
+
+
+.footer__socialmedia-item::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    border-bottom: 5px solid #3C71BD;
+    width: 100%;
+    font-size: 6rem;
+    height: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.footer__socialmedia-item-github::before  {
+    border-bottom: 5px solid #fff;
+}
+
+.footer__socialmedia-item:hover::before {
+    height: 100%;
+}
+
+.footer__socialmedia-item:hover .footer__socialmedia-icon  {
+    color:#0077B5;
+    transition: .8s ease-in-out;
+}
+
+.footer__socialmedia-item:hover .footer__socialmedia-icon--github {
+    color:#fff;
+}

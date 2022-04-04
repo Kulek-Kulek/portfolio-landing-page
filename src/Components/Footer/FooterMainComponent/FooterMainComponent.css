@@ -1,21 +1,25 @@
 .footer {
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
-    height: 70vh;
+    height: 100vh;
     background-color: var(--bg-color);
     padding: 5% 0;
-    /* background-color: #fff; */
 }
 
 
-.container {
+.footer__contact-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-basis: 55%;
-    /* width: 1000px; */
-    /* display: flex;
-    justify-content: space-between; */
-    /* background: #fff; */
+    height: 100%;
+}
+
+
+.footer__socialmedia-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
 }

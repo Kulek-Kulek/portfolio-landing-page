@@ -1,0 +1,108 @@
+
+.infinite {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        height: 35%;
+        /* width: 100%; */
+      /* background:#042104; */
+      background: transparent;
+      -webkit-animation: animateInfiniteColor 8s linear infinite;
+              animation: animateInfiniteColor 8s linear infinite;
+    }  
+    
+.infinite__container {
+        display: flex;
+    }
+    
+    .infinite__circle {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 -7.5px;
+    }
+    
+    .infinite__dot {
+        position: absolute;
+        top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+    /* 360 / 20 = 18deg */
+    }
+    
+    .infinite__dot::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top:calc(50% - 7.5px);
+        width: 15px;
+        height: 15px;
+        background: #00ff0a;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #00ff0a,0 0 20px #00ff0a,0 0 40px #00ff0a,0 0 60px #00ff0a,0 0 80px #00ff0a,0 0 100px #00ff0a;
+        transform: scale(.1);
+        -webkit-animation: infinityAnimation 4s linear infinite;
+                animation: infinityAnimation 4s linear infinite;
+                -webkit-animation-delay: calc(.1s * var(--i));
+                        animation-delay: calc(.1s * var(--i));
+    }
+    
+    
+    .infinite__circle:nth-child(2){
+        transform: rotate(-180deg);
+    }
+    
+    .infinite__circle:nth-child(2) span::before{
+        -webkit-animation-delay: calc(-0.1s * var(--i));
+                animation-delay: calc(-0.1s * var(--i));
+    }
+    
+    
+    @-webkit-keyframes infinityAnimation {
+        0% {
+    transform: scale(1);
+        }
+        50%,100% {
+            transform: scale(.1);
+        }
+    }
+    
+    
+    
+    @keyframes infinityAnimation {
+        0% {
+    transform: scale(1);
+        }
+        50%,100% {
+            transform: scale(.1);
+        }
+    }
+
+
+    @-webkit-keyframes animateInfiniteColor {
+        0% {
+            -webkit-filter: hue-rotate(0deg);
+                    filter: hue-rotate(0deg);
+        }
+        100% {
+            -webkit-filter: hue-rotate(360deg);
+                    filter: hue-rotate(360deg);
+        }
+    }
+    
+    @keyframes animateInfiniteColor {
+        0% {
+            -webkit-filter: hue-rotate(0deg);
+                    filter: hue-rotate(0deg);
+        }
+        100% {
+            -webkit-filter: hue-rotate(360deg);
+                    filter: hue-rotate(360deg);
+        }
+    }

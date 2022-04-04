@@ -1,0 +1,75 @@
+
+.divideonscroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background:transparent;
+}
+
+.divideonscroll__wrapper {
+position: relative;
+width: 80%;
+height: 50%;
+margin-bottom: 5%;
+
+}
+
+.divideonscroll__video-wrapper {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.divideonscroll__video-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.divideonscroll__video-wrapper1 {
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%);
+            clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+.divideonscroll__video-wrapper2 {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.divideonscroll__video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+
+
+.divideonscroll__text-content {
+    /* margin-top: 200vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+padding: 0 15%;
+}
+
+.divideonscroll__heading {
+    font-size: 3em;
+    margin-bottom: 5%;
+}
+
+.divideonscroll__text {
+    font-size: 1.2em;
+}
