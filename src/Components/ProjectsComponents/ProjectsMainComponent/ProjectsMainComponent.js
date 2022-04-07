@@ -97,7 +97,7 @@ const ProjectsMainComponent = props => {
 
 
     return (
-        <Section class='projects'>
+        <Section class='projects' id='projects'>
             <nav className='projects__nav'>
                 <ul className='projects__nav-list'>
                     {navlinks}

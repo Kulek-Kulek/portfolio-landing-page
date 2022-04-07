@@ -15,7 +15,7 @@ const WelcomeSectionComponent = props => {
     }, [])
 
     return (
-        <Section class="welcome__section" />
+        <Section class="welcome__section" id='welcome__section' />
     );
 }
 

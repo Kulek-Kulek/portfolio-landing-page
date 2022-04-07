@@ -24,11 +24,11 @@ const Infinite = props => {
 
     return (
         <div className='infinite'>
-            <div class="infinite__container">
-                <div class="infinite__circle">
+            <div className="infinite__container">
+                <div className="infinite__circle">
                     {infiniteItems}
                 </div>
-                <div class="infinite__circle">
+                <div className="infinite__circle">
                     {infiniteItems}
                 </div>
             </div>

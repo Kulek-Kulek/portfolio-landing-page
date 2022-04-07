@@ -6,7 +6,7 @@ import './WelcomeMobileSection.css';
 
 const WelcomeMobileSection = props => {
     return (
-        <Section class='mobile-section'>
+        <Section class='mobile-section' id='mobile-section'>
             <div className="mobile-section__desc">
                 <div>
                     <h1 className="mobile-section__main-heading">My first slogan</h1>

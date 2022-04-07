@@ -2,8 +2,8 @@
     position: relative;
 height: 100vh;
 
--webkit-animation: animateInfiniteColor 8s linear infinite;
-animation: animateInfiniteColor 8s linear infinite;
+/* -webkit-animation: animateInfiniteColor 8s linear infinite;
+animation: animateInfiniteColor 8s linear infinite; */
 }
 
 .parallax-slogan {

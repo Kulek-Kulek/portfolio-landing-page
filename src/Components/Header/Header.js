@@ -18,7 +18,7 @@ const Header = props => {
 
 
     return (
-        <header className='header'>
+        <header className='header' id='header'>
             <div className='header__bar-wrapper'>
                 <FontAwesomeIcon className='header__bars' data-header icon={faBars} onClick={toggleSidebarHandler} />
             </div>

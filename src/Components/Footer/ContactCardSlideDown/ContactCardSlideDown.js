@@ -22,7 +22,6 @@ const ContactCardSlideDown = props => {
 
     const openContactFormHandler = () => {
         const contactForm = document.querySelector('.contact-form');
-        console.log(contactForm);
         contactForm.classList.add('contact-form--active');
     }
 

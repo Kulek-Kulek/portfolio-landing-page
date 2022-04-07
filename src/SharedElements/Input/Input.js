@@ -13,11 +13,10 @@ const Input = props => {
                 type={props.type}
                 required={props.required}
                 accept={props.type === 'file' ? props.accept : null}
-                // checked={inputCurrentState.checked}
                 placeholder={props.placeholder}
-                // value={inputCurrentState.value}
-                // onChange={inputChangeHandler}
-                // onBlur={touchHandler}
+                value={props.value}
+                onChange={props.change}
+                onBlur={props.blur}
                 className={props.class}
                 disabled={props.disabled}
             />
@@ -26,10 +25,10 @@ const Input = props => {
             id={props.id}
             rows={props.rows || 4}
             required={props.required}
-            // value={inputCurrentState.value}
+            name={props.name}
             placeholder={props.placeholder}
-            // onChange={inputChangeHandler}
-            // onBlur={touchHandler}
+            value={props.value}
+            onChange={props.change}
             className={props.class} />
     }
 
