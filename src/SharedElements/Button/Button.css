@@ -33,7 +33,7 @@
 
 .button__rect {
     stroke: #00e2ff;
-    stroke-width: 10;
+    stroke-width:7;
     stroke-dasharray: 60 200;
     stroke-dashoffset: 320;
     transition: 2s;

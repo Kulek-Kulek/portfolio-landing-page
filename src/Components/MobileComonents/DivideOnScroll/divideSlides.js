@@ -1,35 +1,42 @@
 export const divideSlides = () => {
-    const section = document.querySelector('#divideonscroll');
+    const section = document.querySelector('#divide-on-scroll');
+    const side1 = document.querySelector('#divideonscroll-video-wrapper-one');
+    const side2 = document.querySelector('#divideonscroll-video-wrapper-two');
+    const hiddenTextContent = document.querySelector('#divideonscroll-text-content');
 
-    const side1 = document.querySelector('#divideonscrollVideoWrapper1');
-    const side2 = document.querySelector('#divideonscrollVideoWrapper2');
+    const sectionFromTop = section.getBoundingClientRect().top;
+    const sectionHeight = section.offsetHeight;
 
-    const sectionFromTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
+    let sectionStartingPoint = (sectionFromTop - sectionHeight / 2) + sectionHeight * .3;
 
-    const side1Width = side1.clientWidth;
-    const side2Width = side1.clientWidth;
-
-    let pix = 0;
-    window.onscroll = function (e) {
-        // print "false" if direction is down and "true" if up
-        let scroll = this.oldScroll > this.scrollY;
-        this.oldScroll = this.scrollY;
-        const top = window.pageYOffset || document.documentElement.scrollTop;
-        const computedWidth = window.getComputedStyle(side1).left.slice(0, -3);
-        console.log(window.getComputedStyle(side1).left);
-
-        if (top > sectionFromTop - sectionHeight * .15 && !scroll) {
-            pix = ++pix;
-            side1.style.left = -pix * 30 + 'px';
-            side2.style.left = pix * 30 + 'px';
-        }
-        // if (top > sectionFromTop - sectionHeight * .15 && scroll) {
-        //     pix = ++pix;
-        //     side1.style.left = +computedWidth + pix + 'px';
-        //     side2.style.left = +computedWidth - pix + 'px';
-        //     console.log(computedWidth);
-        // }
+    const moveSlidesRightLeft = (scrollFromTop) => {
+        side1.style.left = -(scrollFromTop - sectionStartingPoint) * .3 < 0 ? -(scrollFromTop - sectionStartingPoint) * .3 + 'vw' : 0;
+        side2.style.left = ((scrollFromTop - sectionStartingPoint) * .3) > 0 ? (scrollFromTop - sectionStartingPoint) * .3 + 'vw' : 0;
     }
 
+
+    window.onscroll = function (e) {
+        let scrollGoingUp = this.oldScroll > this.scrollY;
+        this.oldScroll = this.scrollY;
+
+        const scrollFromTop = window.scrollY;
+
+        const computedLeftSidePlus = window.getComputedStyle(side2).left.slice(0, -3);
+        const computedLeftSideMinus = window.getComputedStyle(side1).left.slice(0, -3);
+
+        if (scrollFromTop > sectionStartingPoint &&
+            scrollFromTop < sectionStartingPoint + sectionHeight &&
+            !scrollGoingUp) {
+            moveSlidesRightLeft(scrollFromTop);
+            if (computedLeftSidePlus > window.innerWidth * .4) hiddenTextContent.classList.add('divideonscroll__text-content--active');
+        }
+
+        if ((scrollFromTop < sectionStartingPoint + sectionHeight) &&
+            scrollGoingUp) {
+            if (computedLeftSidePlus >= 0 && computedLeftSideMinus <= 0) {
+                moveSlidesRightLeft(scrollFromTop);
+                if (computedLeftSidePlus < window.innerWidth * .5) hiddenTextContent.classList.remove('divideonscroll__text-content--active');
+            }
+        }
+    }
 }

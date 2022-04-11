@@ -12,7 +12,7 @@ import './FooterMainComponent.css';
 const FooterMainComponent = props => {
     return (
 
-        <footer className='footer'>
+        <footer className='footer' id='footer'>
             <div className='footer__contact-container'>
                 <ContactCardSlideDown
                     icon={faAt}
@@ -29,11 +29,12 @@ const FooterMainComponent = props => {
                 />
             </div>
             <ul className='footer__socialmedia-container'>
-                <SocialMedia icon={faLinkedin} />
+                <SocialMedia icon={faLinkedin} socialMediaPage='https://fonts.google.com/specimen/Roboto' />
                 <SocialMedia
                     icon={faGithub}
                     classIcon='footer__socialmedia-icon--github'
                     classItem='footer__socialmedia-item-github'
+                    socialMediaPage='https://fonts.google.com/specimen/Roboto'
                 />
             </ul>
         </footer>

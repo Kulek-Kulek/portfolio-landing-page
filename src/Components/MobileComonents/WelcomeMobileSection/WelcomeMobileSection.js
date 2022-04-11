@@ -14,7 +14,7 @@ const WelcomeMobileSection = props => {
                 </div>
                 <Button
                     type='text'
-                    text='Read more'
+                    text='More'
                 />
             </div>
             <div className='mobile-section__slider-wrapper'>

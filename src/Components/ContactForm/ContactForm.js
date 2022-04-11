@@ -63,11 +63,11 @@ const ContactForm = () => {
         // }
     });
 
-    console.log(formik.values.name);
-    console.log(formik.values.surname);
-    console.log(formik.values.mobile);
-    console.log(formik.values.email);
-    console.log(formik.values.textarea);
+    // console.log(formik.values.name);
+    // console.log(formik.values.surname);
+    // console.log(formik.values.mobile);
+    // console.log(formik.values.email);
+    // console.log(formik.values.textarea);
 
 
     const sendRequestHandler = async (e) => {

@@ -21,6 +21,7 @@
 .projects {
     height: auto;
     position: relative;
+    overflow: hidden;
 }
 
 .projects__nav {

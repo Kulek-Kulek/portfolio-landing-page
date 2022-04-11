@@ -8,7 +8,7 @@ const NavItem = props => {
     let iconId;
     switch (props.name) {
         case 'mongodb':
-            iconId = 'mongodblogo';
+            iconId = 'mongodb-icon';
             break;
         case 'react.js':
             iconId = 'react';
