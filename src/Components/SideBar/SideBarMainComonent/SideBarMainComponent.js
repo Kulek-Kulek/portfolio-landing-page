@@ -29,7 +29,7 @@ const menu = [
     },
     {
         id: uuidv4(),
-        path: '/mmm',
+        path: '/contact',
         icon: faHandshake,
         desc: "Let's do it",
         bottom: true

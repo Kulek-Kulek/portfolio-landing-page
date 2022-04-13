@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import SVGIcon from '../../../SharedElements/SVGIcon/SVGIcon';
 
 import './NavItem.css';
@@ -10,33 +10,33 @@ const NavItem = props => {
         case 'mongodb':
             iconId = 'mongodb-icon';
             break;
-        case 'react.js':
+        case 'react':
             iconId = 'react';
             break;
-        case 'angular.js':
+        case 'angular':
             iconId = 'angular';
             break;
-        case 'typescript.js':
+        case 'typescript':
             iconId = 'typescript';
             break;
-        case 'node.js':
+        case 'node':
             iconId = 'nodelogo';
             break;
-        case 'redux.js':
+        case 'redux':
             iconId = 'redux';
+            break;
+        case 'css':
+            iconId = 'css';
             break;
         default: iconId = 'javascript'
     }
 
-
-
-
     return (
         <li className='projects__nav-item'>
-            <Link to='#' className='projects__nav-link' data-text={props.name}>
+            <button onClick={props.click} name={props.name} className='projects__nav-link' data-text={props.name}>
                 <SVGIcon class='projects__nav-i' spriteId={iconId} />
                 {props.name}
-            </Link>
+            </button>
         </li>
     );
 }

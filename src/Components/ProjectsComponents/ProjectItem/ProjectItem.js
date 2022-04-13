@@ -6,8 +6,8 @@ import './ProjectItem.css';
 const ProjectItem = props => {
 
     const stack = props.stack.map(item => (
-        <SVGIcon class="projects__tag" spriteId={item} />
-    ))
+        <SVGIcon key={uuidv4()} class="projects__tag" spriteId={item} />
+    ));
 
     return (
         <li className='projects__list-item'>
@@ -26,21 +26,17 @@ const ProjectItem = props => {
                         </div>
                     </div>
                     <div className="projects__card-back-desc">
-                        <article>Ea sint nulla consequat id ex voluptate in Lorem excepteur elit ex cillum enim. Labore duis mollit do labore nostrud sit. Aliqua ullamco aliqua ipsum anim occaecat amet dolor sint cupidatat.
-
-                            In sunt ullamco culpa duis veniam Lorem eiusmod eu velit esse. Nostrud sunt adipisicing laboris ut id nulla dolor elit elit occaecat. Irure adipisicing Lorem anim excepteur aute officia ipsum fugiat. Adipisicing esse quis duis laborum id ut sint ea aute et sit.
-
-                        </article>
+                        <article>{props.desc}</article>
                     </div>
                     <div className="projects__card-back-links">
                         {props.gitHub &&
                             <a key={uuidv4()} href={props.gitHub.href} target="_blank" rel="noreferrer" className="projects__card-back-a">
-                                <img class='projects__card-back-linkicon' src={props.gitHub.icon} alt={props.gitHub.name}></img>
+                                <img className='projects__card-back-linkicon' src={props.gitHub.icon} alt={props.gitHub.name}></img>
                                 {props.gitHub.name}
                             </a>}
                         {props.webpage &&
                             <a key={uuidv4()} href={props.webpage.href} target="_blank" rel="noreferrer" className="projects__card-back-a">
-                                <img class='projects__card-back-linkicon' src={props.webpage.icon} alt={props.webpage.name}></img>
+                                <img className='projects__card-back-linkicon' src={props.webpage.icon} alt={props.webpage.name}></img>
                                 {props.webpage.name}
                             </a>}
                     </div>

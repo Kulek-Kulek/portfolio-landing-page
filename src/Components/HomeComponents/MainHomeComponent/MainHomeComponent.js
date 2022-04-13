@@ -8,7 +8,7 @@ const MainHomeComponent = props => {
         <>
             <WelcomeSectionComponent />
             <RangeSliderComponent />
-            <ParallaxTextComponent slogan='Permanent Development' />
+            <ParallaxTextComponent slogan='Lifelong Development' />
             <Cylinder cylinderSlogan='CSS' cylinderRepeatTimes={16} />
         </>
     );

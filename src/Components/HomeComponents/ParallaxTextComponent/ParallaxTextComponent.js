@@ -12,7 +12,6 @@ const ParallaxTextComponent = props => {
             <div className="parallax-slogan">
                 <div className="parallax-slogan__skew1" >
                     <h2 className="parallax-slogan__layer parallax-slogan__layer1">{props.slogan}</h2>
-
                 </div>
                 <Infinite infiniteRepeatTimes={21} />
                 <div className="parallax-slogan__text-wrapper">
@@ -23,7 +22,6 @@ const ParallaxTextComponent = props => {
                     <Infinite infiniteRepeatTimes={21} />
                 </div>
             </div>
-
         </Section>
     );
 }

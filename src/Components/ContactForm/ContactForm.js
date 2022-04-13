@@ -63,13 +63,6 @@ const ContactForm = () => {
         // }
     });
 
-    // console.log(formik.values.name);
-    // console.log(formik.values.surname);
-    // console.log(formik.values.mobile);
-    // console.log(formik.values.email);
-    // console.log(formik.values.textarea);
-
-
     const sendRequestHandler = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -196,8 +189,17 @@ const ContactForm = () => {
                     </div>
                     <div className="contact-form__row100">
                         <div className="contact-form__button-wrapper">
-                            <Button type='text' text='Cancel' class='contact-form__button' click={cancelContactFormHandler} />
-                            <Button type='submit' text='Send' class='contact-form__button' />
+                            <Button
+                                type='text'
+                                text='Cancel'
+                                class='contact-form__button'
+                                click={cancelContactFormHandler}
+                            />
+                            <Button
+                                type='submit'
+                                text='Send'
+                                class='contact-form__button'
+                            />
                         </div>
                     </div>
                 </form>
