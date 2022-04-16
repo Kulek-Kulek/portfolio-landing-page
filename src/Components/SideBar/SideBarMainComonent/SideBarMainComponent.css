@@ -3,7 +3,7 @@
     position: sticky;
     left: 0;
     top: var(--header-height);
-    flex-basis: 16vw;
+    flex-basis: 17vw;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,16 @@
 .sidebar.open {
     flex-basis: 50vw;
 }
+@media (orientation:landscape) {
+    .sidebar {
+        flex-basis: 10vw;
+    }
+
+    .sidebar.open {
+        flex-basis: 30vw;
+    }
+}
+
 
 @media(min-width:1024px) {
     .sidebar {

@@ -10,10 +10,10 @@ const MessageSent = props => {
         const contactForm = document.querySelector('.contact-form');
         contactForm.classList.remove('contact-form--active');
         const messageSent = document.querySelector('.message-sent');
-        const contacForm = document.querySelector('.contact');
+        // const contacForm = document.querySelector('.contact');
 
         messageSent.classList.remove('message-sent--active');
-        contacForm.classList.remove('contact--active');
+        // contacForm.classList.remove('contact--active');
         props.errorModalHide && props.errorModalHide();
     }
 

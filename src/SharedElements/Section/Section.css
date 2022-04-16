@@ -1,7 +1,3 @@
 .section {
-    /* position: -webkit-sticky;
-    position: sticky !important;
-    top:0;
-    width: 100%; */
     height: calc(100vh - var(--header-height));
 }

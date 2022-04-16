@@ -1,6 +1,6 @@
 .projects__list-item {
-    flex-basis: 45%;
-    height: 50em;
+    flex-basis: 90%;
+    height: 30em;
     margin: 3rem auto 3rem;
     list-style: none;
     perspective: 30em;
@@ -70,7 +70,7 @@
 
 .projects__tags-heading {
     letter-spacing: 4px;
-    font-size: 22px;
+    font-size: 18px;
     color: #fff;
     text-transform: uppercase;
  
@@ -97,6 +97,7 @@
     width: 100%;
     flex-grow: 1;
     padding: 0 5%;
+    font-size: 14px;
     background-color: var(--main-color);
     color: #fff;
 }
@@ -112,7 +113,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.5em;
+    font-size: .8em;
     transform: translateY(100px);
     text-decoration: none;
     /* text-transform: capitalize; */
@@ -125,8 +126,8 @@
 }
 
 .projects__card-back-linkicon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .projects__list-item:hover .projects__card {
@@ -146,7 +147,20 @@
 @media (min-width:1024px) {
     .projects__list-item {
         flex-basis: 35%;
-        height: 75vh;
+        height: 80vh;
         margin: 2rem 2.5rem;
+    }
+    .projects__tags-heading {
+        font-size: 24px;
+    }
+    .projects__card-back-desc {
+        font-size: 16px;
+    }
+    .projects__card-back-a {
+        font-size: 1.5em;
+    }
+    .projects__card-back-linkicon {
+        width: 40px;
+        height: 40px;
     }
 }

@@ -39,9 +39,7 @@ const RangeSliderComponent = props => {
         <Section class='range-slider'>
             <div className="range-slider__wrapper">
                 <div className="range-slider__desc" id='rangeSliderDesc'>
-                    <p className="range-slider__p" id='rangeSliderText'>Laboris id laborum aute cillum. Aliquip culpa ipsum sint non pariatur minim nisi. Ipsum ad enim fugiat cillum ea ad excepteur. Laboris non sunt Lorem sit ad elit culpa elit veniam occaecat ut fugiat consequat.
-
-                        Mollit fugiat in proident aute excepteur exercitation ea ad do irure ipsum. Veniam do reprehenderit culpa qui elit dolore enim. Incididunt consequat aliqua irure fugiat. Nulla aute proident amet sit culpa sit qui voluptate cupidatat ea. Officia ex et commodo sunt. In est ad qui est.</p>
+                    <p className="range-slider__p" id='rangeSliderText'>Laboris id laborum aute cillum. Aliquip culpa ipsum sint non pariatur minim nisi. Ipsum ad enim fugiat cillum ea ad excepteur. Laboris non sunt Lorem sit ad elit culpa elit veniam occaecat ut fugiat consequat. </p>
                     <h2 className="range-slider__range-value" id="rangeValue">{rangeValue}</h2>
                     <div className="range-slider__fill-range-value" id="fillRangeValue">
                     </div>

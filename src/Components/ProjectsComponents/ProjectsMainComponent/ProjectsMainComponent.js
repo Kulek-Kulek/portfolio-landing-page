@@ -1,102 +1,47 @@
+import { useState, useEffect } from 'react';
+
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import Section from "../../../SharedElements/Section/Section";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import NavItem from "../NavItem/NavItem";
 import SVGIcon from '../../../SharedElements/SVGIcon/SVGIcon';
+import Spinner from '../../../SharedElements/Spinner/Spinner';
+import InfoModal from '../../../SharedElements/InfoModal/InfoModal';
+import { useHttpClient } from '../../../Hooks/http-hook';
 import { v4 as uuidv4 } from 'uuid';
 import github from '../../../Assets/Images/svg/github.svg';
 import website from '../../../Assets/Images/svg/website.svg';
 import './ProjectsMainComponent.css';
 
-const PROJECTS_LIST = [
-    {
-        id: uuidv4(),
-        name: 'project 1',
-        desc: 'Ea sint nulla consequat id ex voluptate in Lorem excepteur elit ex cillum enim. Labore duis mollit do labore nostrud sit. Aliqua ullamco aliqua ipsum anim occaecat amet dolor sint cupidatat.   In sunt ullamco culpa duis veniam Lorem eiusmod eu velit esse. Nostrud sunt adipisicing laboris ut id nulla dolor elit elit occaecat. Irure adipisicing Lorem anim excepteur aute officia ipsum fugiat. Adipisicing esse quis duis laborum id ut sint ea aute et sit.',
-        mainStack: 'javascript.js',
-        stack: ['react', 'node', 'typescript', 'javascript'],
-        imgFront: 'react',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 2',
-        desc: 'Ea sint nulla consequat id ex voluptate in Lorem excepteur elit ex cillum enim. Labore duis mollit do labore nostrud sit. Aliqua ullamco aliqua ipsum anim occaecat amet dolor sint cupidatat.   In sunt ullamco culpa duis veniam Lorem eiusmod eu velit esse. Nostrud sunt adipisicing laboris ut id nulla dolor elit elit occaecat. Irure adipisicing Lorem anim excepteur aute officia ipsum fugiat. Adipisicing esse quis duis laborum id ut sint ea aute et sit.',
-        mainStack: ['react.js'],
-        stack: ['node', 'typescript', 'javascript', 'mongodb', 'redux'],
-        // icon: ['react', 'angular', 'node'],
-        imgFront: 'angular',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 3',
-        desc: 'Ea sint nulla consequat id ex voluptate in Lorem excepteur elit ex cillum enim. Labore duis mollit do labore nostrud sit. Aliqua ullamco aliqua ipsum anim occaecat amet dolor sint cupidatat.   In sunt ullamco culpa duis veniam Lorem eiusmod eu velit esse. Nostrud sunt adipisicing laboris ut id nulla dolor elit elit occaecat. Irure adipisicing Lorem anim excepteur aute officia ipsum fugiat. Adipisicing esse quis duis laborum id ut sint ea aute et sit.',
-        mainStack: 'redux.js',
-        stack: ['typescript', 'javascript'],
-        // icon: ['redux', 'mongo'],
-        imgFront: 'typescript',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 3',
-        desc: 'fffffffffffffff',
-        mainStack: 'typescript',
-        stack: ['javascript', 'mongodb', 'redux'],
-        // icon: ['typescript'],
-        imgFront: 'node',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 4',
-        desc: 'fffffffffffffff',
-        mainStack: 'javascript',
-        stack: ['react', 'node', 'javascript', 'mongodb'],
-        // icon: ['javascript'],
-        imgFront: 'react',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 5',
-        desc: 'fffffffffffffff',
-        mainStack: 'angular.js',
-        stack: ['node', 'angular', 'mongodb', 'redux'],
-        // icon: ['javascript'],
-        imgFront: 'javascript',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-    {
-        id: uuidv4(),
-        name: 'project 6',
-        desc: 'fffffffffffffff',
-        mainStack: 'css',
-        stack: ['node', 'angular', 'typescript', 'mongodb', 'redux', 'css'],
-        // icon: ['css'],
-        imgFront: 'css',
-        gitHub: { href: 'https://www.onet.pl/', name: 'view code', icon: github },
-        webpage: { href: 'https://www.wp.pl/', name: 'webpage', icon: website },
-    },
-
-];
-
 
 const ProjectsMainComponent = props => {
+    const { sendRequest, error, loading, clearError } = useHttpClient();
+
+    const [projectsList, setProjectsList] = useState([]);
+
     const navigate = useNavigate();
     const location = useLocation();
 
     const queryParams = new URLSearchParams(location.search);
-
     const paramType = queryParams.get('sort');
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const responseData = await sendRequest('http://localhost:5000/api/portfolio-projects');
+                setProjectsList(responseData.projects);
+                console.log(responseData.projects);
+            } catch (err) {
+
+            }
+        }
+        fetchData();
+    }, [sendRequest]);
+
+    const errorModalHideHandler = () => {
+        clearError();
+    }
 
     const sortButtonHandler = e => {
         const projectType = e.target.name;
@@ -105,8 +50,8 @@ const ProjectsMainComponent = props => {
 
     let projectsToDisplay = [];
     if (paramType) {
-        projectsToDisplay = PROJECTS_LIST.filter(project => project.stack.includes(paramType));
-    } else projectsToDisplay = PROJECTS_LIST;
+        projectsToDisplay = projectsList.filter(project => project.stack.includes(paramType));
+    } else projectsToDisplay = projectsList;
 
     const projects = projectsToDisplay.map(project => (
         <ProjectItem
@@ -116,14 +61,18 @@ const ProjectsMainComponent = props => {
             stack={project.stack}
             imgFrontSrc={project.imgFront}
             imgFrontAlt={project.imgFront && project.imgFront.alt}
-            gitHub={project.gitHub && project.gitHub}
-            webpage={project.webpage && project.webpage}
+            gitHub={project.gitHub && project.gitHub.icon && github}
+            webpage={project.webpage && project.webpage.icon && website}
+            hrefGit={project.gitHub && project.gitHub.href && project.gitHub.href}
+            hrefWeb={project.webpage && project.webpage.href && project.webpage.href}
+            gitHubName={project.gitHub && project.gitHub.name && project.gitHub.name}
+            webpageName={project.webpage && project.webpage.name && project.webpage.name}
         />
     ));
 
     let uniqueStack = [];
 
-    for (let arr of PROJECTS_LIST) {
+    for (let arr of projectsList) {
         for (let stack of arr.stack) {
             if (!uniqueStack.includes(stack)) {
                 uniqueStack.push(stack)
@@ -144,15 +93,24 @@ const ProjectsMainComponent = props => {
         <Section class='projects' id='projects'>
             <nav className='projects__nav'>
                 <ul className='projects__nav-list'>
-                    <button data-text='All projects' onClick={sortButtonHandler} className='projects__nav-link'>
+                    <button onClick={sortButtonHandler} className='projects__nav-link'>
                         <SVGIcon class='projects__nav-i' spriteId='projects' />
                         All projects</button>
                     {navlinks}
                 </ul>
             </nav>
             <ul className="projects__list">
-                {projects}
+                {loading ? <Spinner /> :
+                    projects}
             </ul>
+            {
+                error && <InfoModal
+                    class='message-sent--active'
+                    messageHeading="Uppps - something's wrong."
+                    mainMessage='Sorry, I cannot retrieve required data. Try again later.'
+                    errorModalHide={errorModalHideHandler}
+                />
+            }
         </Section>
     );
 }

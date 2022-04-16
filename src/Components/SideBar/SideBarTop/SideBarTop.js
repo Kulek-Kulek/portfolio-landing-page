@@ -6,10 +6,9 @@ const SideBarTop = props => {
     return (
         <div className="sidebar__top">
             <div className="sidebar__logo-wrapper">
-                <Logo />
+                <Logo spriteId='logoWhiteU' />
             </div>
-            <h3 className='sidebar__logo-slogan'>Your channel</h3>
-            <h4 className='sidebar__logo-slogan'>OkayProjects</h4>
+            <h3 className='sidebar__logo-slogan'>Lifelong Development</h3>
         </div>
     );
 }

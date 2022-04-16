@@ -6,15 +6,16 @@ import Input from '../../SharedElements/Input/Input';
 import Spinner from '../../SharedElements/Spinner/Spinner';
 import InfoModal from '../../SharedElements/InfoModal/InfoModal';
 import { useFormik } from 'formik';
+import { useHttpClient } from '../../Hooks/http-hook';
 import * as yup from 'yup';
 
 import './ContactForm.css';
 
 const ContactForm = () => {
 
-    const [loading, setLoading] = useState(false);
-    const [submitError, setSubmitError] = useState(false);
     const [messageSent, setMessageSent] = useState(false);
+    const { sendRequest, error, loading, clearError } = useHttpClient();
+
 
 
     useEffect(() => {
@@ -65,32 +66,29 @@ const ContactForm = () => {
 
     const sendRequestHandler = async (e) => {
         e.preventDefault();
-        setLoading(true);
-        setSubmitError(false);
+        // setLoading(true);
+        // setSubmitError(false);
         setMessageSent(false);
-        try {
-            const response = await fetch('https://maria-register.herokuapp.com/api/contact/okayProjects', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: formik.values.email,
-                    name: formik.values.name,
-                    surname: formik.values.surname,
-                    comment: formik.values.textarea,
-                    mobile: formik.values.mobile
-                })
+        const fetchData = async () => {
+            const url = 'http://localhost:5000/api/contact/okayProjects';
+            const method = 'POST';
+            const body = JSON.stringify({
+                email: formik.values.email,
+                name: formik.values.name,
+                surname: formik.values.surname,
+                comment: formik.values.textarea,
+                mobile: formik.values.mobile
             });
-            const responseData = await response.json();
+            const headers = { 'Content-Type': 'application/json' }
 
-            responseData.message === 'Wiadomość wysłana' && setMessageSent(true);
-            responseData.message === 'Wiadomość wysłana' && setLoading(false);
+            try {
+                const responseData = await sendRequest(url, method, body, headers);
+                responseData.message === 'Message sent' && setMessageSent(true);
+            } catch (err) {
+
+            }
         }
-        catch (err) {
-            setSubmitError(true);
-            setLoading(false);
-        }
+        fetchData();
     }
 
     const cancelContactFormHandler = () => {
@@ -99,7 +97,7 @@ const ContactForm = () => {
     }
 
     const errorModalHideHandler = () => {
-        setSubmitError(false);
+        clearError();
     }
 
     const portalContent = <div className='contact-form'>
@@ -172,7 +170,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     <div className="contact-form__row100">
-                        <div className="contact-form__col">
+                        <div className="contact-form__col contact-form__col--textarea">
                             <div className="contact-form__inputBox contact-form__textarea-wrapper">
                                 <Input
                                     type="text"
@@ -204,7 +202,7 @@ const ContactForm = () => {
                     </div>
                 </form>
                 {
-                    (submitError || messageSent) && <InfoModal
+                    (error || messageSent) && <InfoModal
                         class='message-sent--active'
                         messageHeading={!messageSent ? "Uppps - something's wrong." : 'One, two, three - go!'}
                         mainMessage={!messageSent ? "Try again later" : "Thanks for your message. You should be receiving a confirmation email right now. Hasn't arrived yet? Please check your spam folder. I'll get back to you asap."}

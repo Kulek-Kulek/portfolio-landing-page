@@ -1,9 +1,6 @@
 .parallax {
     position: relative;
-height: 100vh;
-
-/* -webkit-animation: animateInfiniteColor 8s linear infinite;
-animation: animateInfiniteColor 8s linear infinite; */
+    height: 50vh;
 }
 
 .parallax-slogan {
@@ -49,7 +46,11 @@ animation: animateInfiniteColor 8s linear infinite; */
     transform: skewY(340deg);
 }
 
+
 @media (orientation:landscape) {
+    .parallax {
+        height: 100vh;
+    }
     .parallax-slogan {
         position: relative;
         width: 100%;

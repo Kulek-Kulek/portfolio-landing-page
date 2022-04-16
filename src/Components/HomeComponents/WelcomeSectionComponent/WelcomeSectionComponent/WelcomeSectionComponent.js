@@ -12,7 +12,7 @@ const WelcomeSectionComponent = props => {
         return () => {
             clearInterval(interval);
         }
-    }, [])
+    }, []);
 
     return (
         <Section class="welcome__section" id='welcome__section' />

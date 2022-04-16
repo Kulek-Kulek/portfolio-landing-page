@@ -2,11 +2,12 @@
     --main-color: #292828;
     --bg-color: rgb(29, 27, 27);
     --accent-color: #45f3ff;
-    --header-height: 50px;
-    --header-margin-bottom: 1rem;
+    --heading-color:#4E6077;
+    --header-height: 70px;
+    --header-margin-bottom: .3rem;
     --sidebar-animation-duration: 150ms;
     --sidebar-animation-timing-curve: ease-in-out;
-    --main-fonts:'Roboto', sans-serif;
+    --main-fonts:'Poppins', sans-serif;
 }
 
 body {

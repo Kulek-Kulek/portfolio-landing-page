@@ -10,7 +10,8 @@ import './DivideOnScroll.css';
 const DivideOnScroll = props => {
 
     useEffect(() => {
-        divideSlides();
+        window.addEventListener('scroll', divideSlides);
+        return () => window.removeEventListener('scroll', divideSlides);
     }, []);
 
     return (

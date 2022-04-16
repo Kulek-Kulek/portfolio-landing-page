@@ -39,12 +39,11 @@
 
 
 .sidebar__list-item-link:hover {
-    background-color: grey;
+    background-color: var(--heading-color);
 }
 
 .sidebar__list-item-icon {
     font-size: 25px;
-    /* color: var(--main-color); */
     color: #fff;
     margin-left: 1vw;
 
@@ -53,7 +52,6 @@
 .sidebar__list-item-desc {
     display: block;
     margin-left: 2rem;
-    /* color: var(--main-color); */
     color: #fff;
     transform: translateX(-300px);
 }

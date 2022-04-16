@@ -1,9 +1,6 @@
 .footer__socialmedia-item {
     position: relative;
     list-style: none;
-    padding: 3% 5%;
-    margin: 0 7%;
-    /* background-color: #fff; */
 }
 
 
@@ -13,7 +10,7 @@
 
 .footer__socialmedia-icon {
     color: #333;
-    font-size: 10em;
+    font-size: 7em;
     cursor: pointer;
     transition: .4s ease-in-out;
 }
@@ -48,3 +45,16 @@
 .footer__socialmedia-item:hover .footer__socialmedia-icon--github {
     color:#fff;
 }
+
+
+
+@media (min-width:1024px) {
+  .footer__socialmedia-item {
+    padding: 3% 5%;
+    margin: 0 7%;
+  }
+  .footer__socialmedia-icon {
+    font-size: 10em;
+}
+}
+

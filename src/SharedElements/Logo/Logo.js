@@ -1,11 +1,16 @@
-import logoImg from '../../Assets/Images/logo_1280x606.jpg';
+import React from 'react';
+import SVGIcon from '../../SharedElements/SVGIcon/SVGIcon';
+// import { ReactComponent as ReactLogoWhite } from '../../Assets/Images/svg/logo-white.svg';
+// import { ReactComponent as ReactLogoBlack } from '../../Assets/Images/svg/logo-white.svg';
 
 import './Logo.css';
 
 
 const Logo = props => {
     return (
-        <img className='logo-img' src={props.logoSrc ? props.logoSrc : logoImg} alt="logo"></img>
+        <div className='logo'>
+            <SVGIcon spriteId={props.spriteId} class='logo__img' />
+        </div>
     );
 }
 

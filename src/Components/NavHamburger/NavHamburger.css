@@ -1,0 +1,104 @@
+.nav__hamburger-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.nav__hamburger-div {
+    position: relative;
+    display: block;
+    width: 3rem;
+    height: 4px;
+    background: black;
+    border-radius: 5px;
+    margin-right: .5rem;
+    overflow: hidden;
+}
+
+.nav__hamburger-div:nth-child(2) {
+    width: 2.2rem;
+}
+
+.nav__hamburger-div:nth-child(3) {
+    width: 2.5rem;
+}
+
+.nav__hamburger-div--hide {
+    display: none;
+}
+
+.hamburger-close-menu {
+    display: none;
+    font-size: 2rem;
+    color: #000;
+    text-shadow: .5rem .5rem 10px #fff;
+    transition: .3s;
+}
+
+.nav__hamburger-wrapper:hover .hamburger-close-menu {
+    transform: rotate(180deg);
+    transition: .5s;
+}
+
+.hamburger-close-menu--active {
+    display: block;
+}
+
+.nav__haburger-snail {
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: translate(50%, 10%);
+    background-color: #fff;
+    width: 8px;
+    height: 5px;
+    border-radius: 5px;
+    -webkit-animation: hamburger-snail-move 9s infinite linear;
+    animation: hamburger-snail-move 9s infinite linear;
+}
+
+.nav__hamburger-div:nth-of-type(2) .nav__haburger-snail {
+    animation: hamburger-snail-move 9s infinite reverse linear;
+    -webkit-animation-delay: -3s;
+    animation-delay: -3s;
+}
+
+.nav__hamburger-div:nth-of-type(3) .nav__haburger-snail {
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+@-webkit-keyframes hamburger-snail-move {
+    to {
+        transform: translateX(12rem);
+    }
+}
+
+@keyframes hamburger-snail-move {
+    to {
+        transform: translateX(12rem);
+    }
+}
+
+@media(min-width:1024px) {
+    .nav__hamburger-wrapper {
+        right: 1.5%;
+        height: 4rem;
+    }
+    .nav__hamburger-div {
+        width: 4rem;
+        height: 6px;
+    }
+    .nav__hamburger-div:nth-child(2) {
+        width: 3rem;
+    }
+    .nav__hamburger-div:nth-child(3) {
+        width: 3.5rem;
+    }
+    .hamburger-close-menu {
+        font-size: 3rem;
+    }
+}

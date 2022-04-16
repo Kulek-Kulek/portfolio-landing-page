@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import SideBarMainComponent from "../SideBar/SideBarMainComonent/SideBarMainComponent";
 import Main from "../../SharedElements/Main/Main";
 import FlexContent from "../../SharedElements/FlexContent/FlexContent";
@@ -8,6 +9,7 @@ import FooterMainComponent from "../Footer/FooterMainComponent/FooterMainCompone
 import './Layout.css';
 
 const Layout = props => {
+    const location = useLocation();
     return (
         <Fragment>
             <Header />
@@ -16,9 +18,8 @@ const Layout = props => {
                 <div className="app-wrapper">
                     <Main>
                         {props.children}
-
                     </Main>
-                    <FooterMainComponent />
+                    {location.pathname !== '/contact' && <FooterMainComponent />}
                 </div>
             </FlexContent>
         </Fragment>

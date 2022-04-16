@@ -5,6 +5,11 @@ import Button from '../../../SharedElements/Button/Button';
 import './WelcomeMobileSection.css';
 
 const WelcomeMobileSection = props => {
+    const openContactFormHandler = () => {
+        const contactForm = document.querySelector('.contact-form');
+        contactForm.classList.add('contact-form--active');
+    }
+
     return (
         <Section class='mobile-section' id='mobile-section'>
             <div className="mobile-section__desc">
@@ -15,6 +20,7 @@ const WelcomeMobileSection = props => {
                 <Button
                     type='text'
                     text='More'
+                    click={openContactFormHandler}
                 />
             </div>
             <div className='mobile-section__slider-wrapper'>

@@ -30,14 +30,14 @@ const ProjectItem = props => {
                     </div>
                     <div className="projects__card-back-links">
                         {props.gitHub &&
-                            <a key={uuidv4()} href={props.gitHub.href} target="_blank" rel="noreferrer" className="projects__card-back-a">
-                                <img className='projects__card-back-linkicon' src={props.gitHub.icon} alt={props.gitHub.name}></img>
-                                {props.gitHub.name}
+                            <a key={uuidv4()} href={props.hrefGit} target="_blank" rel="noreferrer" className="projects__card-back-a">
+                                <img className='projects__card-back-linkicon' src={props.gitHub} alt={props.gitHubName}></img>
+                                {props.gitHubName}
                             </a>}
                         {props.webpage &&
-                            <a key={uuidv4()} href={props.webpage.href} target="_blank" rel="noreferrer" className="projects__card-back-a">
-                                <img className='projects__card-back-linkicon' src={props.webpage.icon} alt={props.webpage.name}></img>
-                                {props.webpage.name}
+                            <a key={uuidv4()} href={props.hrefWeb} target="_blank" rel="noreferrer" className="projects__card-back-a">
+                                <img className='projects__card-back-linkicon' src={props.webpage} alt={props.webpageName}></img>
+                                {props.webpageName}
                             </a>}
                     </div>
                 </div>

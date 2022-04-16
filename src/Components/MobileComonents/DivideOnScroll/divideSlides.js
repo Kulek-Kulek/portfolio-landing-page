@@ -7,7 +7,7 @@ export const divideSlides = () => {
     const sectionFromTop = section.getBoundingClientRect().top;
     const sectionHeight = section.offsetHeight;
 
-    let sectionStartingPoint = (sectionFromTop - sectionHeight / 2) + sectionHeight * .3;
+    let sectionStartingPoint = (sectionFromTop - sectionHeight / 2) + sectionHeight * 1.2;
 
     const moveSlidesRightLeft = (scrollFromTop) => {
         side1.style.left = -(scrollFromTop - sectionStartingPoint) * .3 < 0 ? -(scrollFromTop - sectionStartingPoint) * .3 + 'vw' : 0;
@@ -15,12 +15,11 @@ export const divideSlides = () => {
     }
 
 
-    window.onscroll = function (e) {
+    window.onscroll = function () {
         let scrollGoingUp = this.oldScroll > this.scrollY;
         this.oldScroll = this.scrollY;
 
         const scrollFromTop = window.scrollY;
-
         const computedLeftSidePlus = window.getComputedStyle(side2).left.slice(0, -3);
         const computedLeftSideMinus = window.getComputedStyle(side1).left.slice(0, -3);
 

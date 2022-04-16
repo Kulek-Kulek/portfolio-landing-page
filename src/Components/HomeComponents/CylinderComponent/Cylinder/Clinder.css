@@ -1,10 +1,12 @@
 .cylinder {
-    position: relative;
+    /* position: -webkit-sticky;
+    position: sticky;
+    top:calc(var(--header-height) + var(--header-margin-bottom)); */
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000;
-    height: 100vh;
+    height: 50vh;
     overflow: hidden;
 }
 
@@ -25,7 +27,7 @@
     background: linear-gradient(90deg, transparent, rgba(0, 0, 0, .5), transparent);
     line-height: .76em;
     transform-style: preserve-3d;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    text-shadow: 15px 15px 15px rgba(0, 0, 0, .8);
     transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(80px);
 }
 
