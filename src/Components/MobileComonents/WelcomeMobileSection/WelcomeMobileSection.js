@@ -14,9 +14,10 @@ const WelcomeMobileSection = props => {
         <Section class='mobile-section' id='mobile-section'>
             <div className="mobile-section__desc">
                 <div>
-                    <h1 className="mobile-section__main-heading">My first slogan</h1>
-                    <h5 className="mobile-section__minor-heading">My first subslogan</h5>
+                    <h1 className="mobile-section__main-heading">How far am I?</h1>
+                    <h5 className="mobile-section__minor-heading">Just a click away!</h5>
                 </div>
+                <p className="mobile-section__testimony">It comes with real pleasure to code things from scratch, and I enjoy bringing ideas to life in the browser. I value simple content structure, clean design patterns, and thoughtful interactions.</p>
                 <Button
                     type='text'
                     text='More'

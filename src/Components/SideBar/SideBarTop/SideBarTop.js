@@ -8,7 +8,7 @@ const SideBarTop = props => {
             <div className="sidebar__logo-wrapper">
                 <Logo spriteId='logoWhiteU' />
             </div>
-            <h3 className='sidebar__logo-slogan'>Lifelong Development</h3>
+            <h3 className='sidebar__logo-slogan'>Lifelong Learning</h3>
         </div>
     );
 }

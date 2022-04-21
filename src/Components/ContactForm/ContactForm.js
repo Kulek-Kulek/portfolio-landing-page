@@ -70,7 +70,7 @@ const ContactForm = () => {
         // setSubmitError(false);
         setMessageSent(false);
         const fetchData = async () => {
-            const url = 'http://localhost:5000/api/contact/okayProjects';
+            const url = `${process.env.REACT_APP_BACKEND_URL}contact/okayProjects`;
             const method = 'POST';
             const body = JSON.stringify({
                 email: formik.values.email,

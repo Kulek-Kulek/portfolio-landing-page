@@ -28,6 +28,15 @@ const NavItem = props => {
         case 'css':
             iconId = 'css';
             break;
+        case 'html5':
+            iconId = 'html5';
+            break;
+        case 'jquery':
+            iconId = 'jquery';
+            break;
+        case 'bootstrap':
+            iconId = 'bootstrap';
+            break;
         default: iconId = 'javascript'
     }
 

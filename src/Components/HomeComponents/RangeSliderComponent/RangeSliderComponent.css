@@ -8,7 +8,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
     height: 100%;
@@ -32,7 +31,7 @@
     font-size: 14px;
     color: var(--bg-color);
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 20%;
     z-index: 3;
     transition: 1s ease-in-out;
     transform: translateY(30px);
@@ -131,12 +130,11 @@
     .range-slider__p {
         font-size: 12px;
         transform: translateY(20px);
+        margin-bottom: 5%;
     }
 
     .range-slider__range-value {
-
         font-size: 2em;
-
     }
 
     .range-slider__range-input {
@@ -152,6 +150,7 @@
 
     .range-slider__p {
         font-size: 18px;
+        margin-bottom: 15%;
     }
 
     .range-slider__range-value {

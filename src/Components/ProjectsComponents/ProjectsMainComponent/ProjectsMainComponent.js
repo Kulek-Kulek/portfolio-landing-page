@@ -29,9 +29,8 @@ const ProjectsMainComponent = props => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const responseData = await sendRequest('http://localhost:5000/api/portfolio-projects');
+                const responseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}portfolio-projects`);
                 setProjectsList(responseData.projects);
-                console.log(responseData.projects);
             } catch (err) {
 
             }
@@ -95,7 +94,8 @@ const ProjectsMainComponent = props => {
                 <ul className='projects__nav-list'>
                     <button onClick={sortButtonHandler} className='projects__nav-link'>
                         <SVGIcon class='projects__nav-i' spriteId='projects' />
-                        All projects</button>
+                        All projects
+                    </button>
                     {navlinks}
                 </ul>
             </nav>

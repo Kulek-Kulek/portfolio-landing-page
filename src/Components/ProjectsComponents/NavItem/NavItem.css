@@ -14,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-weight: 700; */
     border: 1px solid black;
     cursor: pointer;
     transition: .5s;
@@ -37,15 +36,14 @@
     content: '';
     position: absolute;
     top: 0;
-    /* left: 0; */
     transform: translate(-50%, 0%);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 4em;
     z-index: -1;
     opacity: 0;
-    font-weight: 900;
+    font-weight:bold;
     text-transform: uppercase;
     letter-spacing: 500px;
     transition: letter-spacing .5s, left .5s;
@@ -55,26 +53,22 @@
 .projects__nav-link:hover:before {
     content: attr(data-text);
     position: absolute;
-    top: 6%;
+    top: 0%;
     opacity: 1;
     letter-spacing: 10px;
     left: 50%;
-    height: 30vh;
+    height: 24vh;
     color: rgba(0, 0, 0, .3);
 }
 
 
-@media (orientation:landscape) {
-
-}
-
 @media (min-width:1024px) {
     .projects__nav-link {
-        font-size: 1.1em;
-     font-weight: 700; 
+        font-size: .7em;
+        font-weight: 700; 
     }
     .projects__nav-i {
-        height: 30px;
-        width: 30px;
+        height: 15px;
+        width: 15px;
     }
 }

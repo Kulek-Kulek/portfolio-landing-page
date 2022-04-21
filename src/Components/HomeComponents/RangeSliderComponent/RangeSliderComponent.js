@@ -39,7 +39,7 @@ const RangeSliderComponent = props => {
         <Section class='range-slider'>
             <div className="range-slider__wrapper">
                 <div className="range-slider__desc" id='rangeSliderDesc'>
-                    <p className="range-slider__p" id='rangeSliderText'>Laboris id laborum aute cillum. Aliquip culpa ipsum sint non pariatur minim nisi. Ipsum ad enim fugiat cillum ea ad excepteur. Laboris non sunt Lorem sit ad elit culpa elit veniam occaecat ut fugiat consequat. </p>
+                    <p className="range-slider__p" id='rangeSliderText'>Quietly confident, naturally curious and perpetually fueled by the inner need to learn and improve. As a strong believer in flexibility, I value customer oriented approach to seamlessly serve clients.<br></br> <br></br><b>Slide the range button left </b>to see the stack I work with.</p>
                     <h2 className="range-slider__range-value" id="rangeValue">{rangeValue}</h2>
                     <div className="range-slider__fill-range-value" id="fillRangeValue">
                     </div>

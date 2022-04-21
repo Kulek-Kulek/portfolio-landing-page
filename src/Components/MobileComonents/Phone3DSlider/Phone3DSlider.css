@@ -1,10 +1,10 @@
 .phone3DSlider {
     position: relative;
-    width: 40%;
+    width: 50%;
     height: 70%;
     background: rgba(0, 0, 0, .1);
     transform: rotate(-20deg) skew(25deg) scale(.8);
-    margin-top: 75%;
+    margin-top: 60%;
     transition: .5s;
 }
 
@@ -43,10 +43,11 @@
         height: 85%;
         background: rgba(0, 0, 0, .1);
         transform: rotate(-30deg) skew(25deg) scale(.8);
-        margin-top: 60%;
+        margin-top: 55%;
         transition: .5s;
     }
 }
+
 
 @media (min-width:1024px) {
     .phone3DSlider {

@@ -24,8 +24,11 @@ const DivideOnScroll = props => {
                     <video src={video} autoPlay muted loop className='divideonscroll__video divideonscroll__video2'></video>
                 </div>
                 <div className='divideonscroll__text-content' id='divideonscroll-text-content'>
-                    <h2 className='divideonscroll__heading'>Scroll down and up</h2>
-                    <p className='divideonscroll__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro tempora a fugit soluta. Et repudiandae magni harum itaque quaerat qui voluptatum officiis commodi, ipsam necessitatibus inventore recusandae dolore temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio numquam vitae earum doloremque culpa excepturi, omnis, expedita repellat est atque quo praesentium nesciunt, animi ad recusandae nemo. Consectetur, similique vero!</p>
+                    <h2 className='divideonscroll__heading'>I believe...</h2>
+                    <p className='divideonscroll__text'>As a strong believer in lifelong learning, I am perpetually fueled by the inner need for constant developing and improving.
+                        Naturally curious, enjoying bringing ideas to life in the browser and creating applications from scratch. Passionate, value-driven
+                        professional with a customer oriented approach. Blend technology and exceptional communication skills with
+                        flexibility towards customers to prioritize and manage multiple projects within specifications and budget restrictions. How far am I? Just a click away.</p>
                 </div>
             </div>
 
